@@ -4,6 +4,7 @@ const inputs = data.toString("utf-8").split("\n");
 
 let horizontalPosition = 0;
 let depth = 0;
+let aim = 0;
 const calculate = (inputs) => {
   inputs.forEach((input) => {
     const inputInfo = input.split(" ");
@@ -12,12 +13,13 @@ const calculate = (inputs) => {
 
     if (inputType === "forward") {
       horizontalPosition += inputValue;
+      depth += aim * inputValue;
     }
     if (inputType === "up") {
-      depth -= inputValue;
+      aim -= inputValue;
     }
     if (inputType === "down") {
-      depth += inputValue;
+      aim += inputValue;
     }
   });
   return depth * horizontalPosition;
