@@ -9,10 +9,10 @@ const calculatePowerConsumption = (inputs) => {
 
   inputs.forEach((input) => {
     const bitsArray = input.split("").map((bit) => parseInt(bit));
-    for (let i = 0; i < numberOfBits; i++) {
-      count0BitsArray[i] += bitsArray[i] === 0 ? 1 : 0;
-      count1BitsArray[i] += bitsArray[i] === 0 ? 0 : 1;
-    }
+    bitsArray.forEach((bit, index) => {
+      count0BitsArray[index] += bitsArray[index] === 0 ? 1 : 0;
+      count1BitsArray[index] += bitsArray[index] === 0 ? 0 : 1;
+    });
   });
 
   const gammaRate = [];
