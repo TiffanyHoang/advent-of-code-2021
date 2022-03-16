@@ -8,8 +8,7 @@ const calculatePowerConsumption = (inputs) => {
   const count1BitsArray = Array(numberOfBits).fill(0);
 
   inputs.forEach((input) => {
-    const dfasd = input.split("").map((bit) => parseInt(bit));
-    const bitsArray = dfasd;
+    const bitsArray = input.split("").map((bit) => parseInt(bit));
     bitsArray.forEach((bit, index) => {
       count0BitsArray[index] += bitsArray[index] === 0 ? 1 : 0;
       count1BitsArray[index] += bitsArray[index] === 0 ? 0 : 1;
